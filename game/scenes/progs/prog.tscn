@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/progs/prog_shape.tres" type="Shape" id=1]
-[ext_resource path="res://scenes/progs/prog.msh" type="Mesh" id=2]
-[ext_resource path="res://scenes/progs/prog_top-fixmat.tres" type="Material" id=3]
-[ext_resource path="res://scenes/progs/prog_bottom-fixmat.tres" type="Material" id=4]
+[ext_resource path="res://scenes/progs/prog.gd" type="Script" id=2]
+[ext_resource path="res://scenes/progs/prog.msh" type="Mesh" id=3]
+[ext_resource path="res://scenes/progs/prog_top-fixmat.tres" type="Material" id=4]
+[ext_resource path="res://scenes/progs/prog_bottom-fixmat.tres" type="Material" id=5]
 
 [node name="Prog" type="RigidBody"]
 
@@ -33,6 +34,7 @@ velocity/linear = Vector3( 4, 8, 0 )
 velocity/angular = Vector3( 0, 0, 0 )
 damp_override/linear = -1.0
 damp_override/angular = -1.0
+script/script = ExtResource( 2 )
 __meta__ = { "__editor_plugin_screen__":"3D" }
 
 [node name="Camera" type="Camera" parent="."]
@@ -67,10 +69,10 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 2 )
+mesh/mesh = ExtResource( 3 )
 mesh/skeleton = NodePath("..")
-material/0 = ExtResource( 3 )
-material/1 = ExtResource( 4 )
+material/0 = ExtResource( 4 )
+material/1 = ExtResource( 5 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 
