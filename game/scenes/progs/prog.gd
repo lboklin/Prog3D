@@ -5,6 +5,9 @@ extends RigidBody
 func jump_to_pos(pos):
 
 	# Apply correct force in correct direction to land at desired pos
+
+	# For testing:
+	self.set_linear_velocity(Vector3(4,4,0))
 	pass
 
 func attack(pos):

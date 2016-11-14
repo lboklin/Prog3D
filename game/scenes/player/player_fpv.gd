@@ -39,7 +39,7 @@ func _fixed_process(delta):
 
 		mouse_pos = new_mouse_pos
 
-func _input(event):
+func _unhandled_input(event):
 
 	#Camera motion
 #	if event.type == InputEvent.MOUSE_MOTION and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -63,9 +63,10 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _ready():
-	mouse_pos = get_viewport().get_mouse_pos()
-	#Hide and capture mouse
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	set_fixed_process(true)
-	set_process_input(true)
+	if self.get_node("Camera").is_current():
+		mouse_pos = get_viewport().get_mouse_pos()
+		#Hide and capture mouse
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		set_fixed_process(true)
+		set_process_unhandled_input(true)
