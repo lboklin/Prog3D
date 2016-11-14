@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scenes/maps/dark/tile.msh" type="Mesh" id=1]
-[ext_resource path="res://scenes/maps/dark/tile-shape.tres" type="Shape" id=2]
-[ext_resource path="res://scenes/progs/prog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/progs/prog.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+
+points = Vector3Array( -0.4999, -0.1249, 0.5, -0.4999, 0.125, 0.5, -0.4999, -0.1249, -0.4999, -0.4999, 0.125, -0.4999, -0.4999, -0.1249, 0.5, -0.4999, -0.1249, -0.4999, 0.5, 0.125, -0.4999, -0.4999, 0.125, -0.4999, 0.5, -0.1249, -0.4999, -0.4999, -0.1249, -0.4999, -0.4999, 0.125, 0.5, 0.5, 0.125, 0.5, -0.4999, -0.1249, 0.5, 0.5, -0.1249, 0.5, -0.4999, -0.1249, -0.4999, -0.4999, -0.1249, 0.5, 0.5, -0.1249, -0.4999, 0.5, -0.1249, 0.5, 0.5, 0.125, -0.4999, 0.5, 0.125, 0.5, -0.4999, 0.125, -0.4999, -0.4999, 0.125, 0.5, -0.4999, 0.125, -0.4999, -0.4999, 0.125, 0.5, -0.4999, -0.1249, -0.4999, -0.4999, -0.1249, 0.5, -0.4999, 0.125, -0.4999, -0.4999, 0.125, 0.5, 0.5, 0.125, 0.5, 0.5, 0.125, -0.4999, 0.5, -0.1249, 0.5, 0.5, -0.1249, -0.4999, 0.5, -0.1249, -0.4999, 0.5, 0.125, -0.4999 )
 
 [node name="Meshes" type="Spatial"]
 
@@ -35,7 +38,7 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = true
 input/capture_on_drag = false
 shape_count = 1
-shapes/0/shape = ExtResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -48,11 +51,11 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="TilePlain/StaticBody"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = ExtResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Prog" parent="." instance=ExtResource( 3 )]
+[node name="Prog" parent="." instance=ExtResource( 2 )]
 
 transform/local = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.783724, 0 )
 
