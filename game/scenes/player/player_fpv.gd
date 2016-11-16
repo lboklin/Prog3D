@@ -8,17 +8,6 @@ var speed = 0.1 #Player speed
 var mouse_pos = Vector2()
 
 
-#func _change_camera(cam):
-#
-#	var id = self.get_node("Camera").get_instance_ID()
-#	if id == cam:
-#		immerse_me()
-#	else:
-#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-#		set_fixed_process(false)
-#		set_process_unhandled_input(false)
-
-
 func immerse_me():
 
 	self.get_node("Camera").make_current()
@@ -76,5 +65,3 @@ func _unhandled_input(event):
 func _ready():
 	if self.get_node("Camera").is_current():
 		immerse_me()
-
-	get_node("Camera").connect("_change_camera", self, "_change_camera")

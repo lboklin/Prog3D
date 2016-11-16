@@ -1,9 +1,8 @@
 extends RigidBody
 
 
-#onready var input_area = preload("res://scenes/input_area.tscn").instance()
-
 var destination = Vector3()
+var airborn = false
 
 
 func attack(pos):
@@ -13,6 +12,10 @@ func attack(pos):
 
 
 func _fixed_process(delta):
+	pass
+
+
+func jump():
 	pass
 
 
@@ -40,11 +43,6 @@ func _fixed_process(delta):
 
 func _ready():
 
-	# Add an Area to catch mouse input and have it centered around
-	# the prog's current or projected position
-#	input_area.set_translation(Vector3(self.get_translation().x, 0, self.get_translation().z))
-#	get_parent().call_deferred("add_child", input_area)
-#	input_area.connect("input_event", self, "_ground_clicked")
-
-	set_process_input(true)
+#	set_process_input(true)
 #	set_fixed_process(true)
+	pass
