@@ -40,13 +40,13 @@ __meta__ = { "__editor_plugin_screen__":"3D" }
 [node name="Camera" type="Camera" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.707109, -0.405577, 0.579226, -4.31389e-06, 0.819151, 0.573579, -0.707105, -0.405585, 0.579227, 10, 10, 10 )
+transform/local = Transform( 0.707109, -0.405577, 0.579226, -4.31389e-06, 0.819151, 0.573579, -0.707105, -0.405585, 0.579227, 4, 4, 4 )
 projection = 1
-size = 10.0
-near = 10.0
-far = 60.0
+size = 6.0
+near = 0.0
+far = 100.0
 keep_aspect = 1
-current = false
+current = true
 visible_layers = 1048575
 environment = null
 h_offset = 0.0
