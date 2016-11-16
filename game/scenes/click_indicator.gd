@@ -1,8 +1,7 @@
 extends Spatial
 
 
-#onready var parent = get_parent()
-onready var prog = self.get_node("../GridMap/Prog")
+onready var prog = self.get_node("../Prog")
 
 var ray_from = Vector3()
 var ray_to = Vector3()

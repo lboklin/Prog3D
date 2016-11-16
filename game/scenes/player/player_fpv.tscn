@@ -44,7 +44,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Camera" type="Camera" parent="."]
+[node name="Camera" type="Camera" parent="." groups=[ "Cameras" ]]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1 )
