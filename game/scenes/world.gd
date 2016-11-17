@@ -1,9 +1,6 @@
 extends Spatial
 
 
-const RAY_LENGTH = 50
-
-
 var cameras = []
 var current_cam = 0
 
@@ -12,8 +9,7 @@ func spawn_indicator(pos):
 
 	var indicator = preload("res://scenes/click_indicator.tscn").instance()
 	self.add_child(indicator)
-	indicator.ray_from = get_viewport().get_camera().project_ray_origin(pos)
-	indicator.ray_to = indicator.ray_from + get_viewport().get_camera().project_ray_normal(pos) * RAY_LENGTH
+	indicator.set_indicator_pos(pos)
 
 
 func break_my_immersion():
@@ -34,8 +30,11 @@ func change_cam():
 #		get_tree().call_group(0, "Cameras", "_change_camera", cameras[0].get_instance_ID())
 
 	if cam.get_name() == "InterpolatedCamera":
-		get_node("PlayerFPV/Camera").make_current()
-		get_node("PlayerFPV").immerse_me()
+		if cam.get_projection() == cam.PROJECTION_ORTHOGONAL:
+			cam.set_perspective(60, 0.01, 100)
+		else:
+			get_node("PlayerFPV/Camera").make_current()
+			get_node("PlayerFPV").immerse_me()
 	else:
 		get_node("InterpolatedCamera").make_current()
 		self.break_my_immersion()
@@ -47,6 +46,8 @@ func _unhandled_input(event):
 		self.call_deferred("spawn_indicator", event.pos)
 	elif event.is_action_pressed("change_camera"):
 		self.change_cam()
+	elif event.is_action_released("quit_game"):
+		get_tree().quit()
 
 
 func _ready():
