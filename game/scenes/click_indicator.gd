@@ -1,7 +1,7 @@
 extends Spatial
 
 
-onready var prog = self.get_node("../Prog")
+onready var anim = self.get_node("AnimationPlayer")
 
 var ray_from = Vector3()
 var ray_to = Vector3()
@@ -16,14 +16,19 @@ func _fixed_process(delta):
 	var space_state = get_world().get_direct_space_state()
 	# use global coordinates, not local to node
 	var ray_intersect = space_state.intersect_ray( ray_from, ray_to )
+	var pos = ray_intersect.position
 
 	if not ray_intersect.empty():
-		prog.destination = ray_intersect.position
-		self.set_translation(ray_intersect.position)
+		self.set_translation(pos)
+		if get_parent().has_node("Prog"):
+			var prog = get_node("../Prog")
+			prog.jump(pos)
+
+
+	set_fixed_process(false)
 
 
 func _ready():
-	var anim = self.get_node("AnimationPlayer")
 	anim.connect("finished", self, "_animation_finished")
 	anim.play("LeftClick")
 
