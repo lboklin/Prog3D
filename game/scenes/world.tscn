@@ -18,19 +18,19 @@ __meta__ = { "__editor_plugin_screen__":"2D" }
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="." groups=[ "Cameras" ]]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.707109, -0.405578, 0.579227, -4.36604e-06, 0.819151, 0.573578, -0.707105, -0.405585, 0.579227, 9.9, 4.025, -1.05 )
+transform/local = Transform( 0.707109, -0.405578, 0.579227, -4.38094e-06, 0.819151, 0.573578, -0.707105, -0.405585, 0.579227, 10, 10, 10 )
 projection = 1
-size = 6.0
+size = 8.0
 near = 0.0
 far = 100.0
 keep_aspect = 1
-current = false
+current = true
 visible_layers = 1048575
 environment = null
 h_offset = 0.0
 v_offset = 0.0
-target = NodePath("../GridMap/Prog/Camera")
-speed = 8.0
+target = NodePath("../Prog/Camera")
+speed = 4.0
 enabled = true
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -79,8 +79,6 @@ shadow/split_weight = 0.01
 shadow/zoffset_scale = 1.0
 
 [node name="Prog" parent="." instance=ExtResource( 4 )]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 0.025, -5.05 )
 
 [node name="PlayerFPV" parent="." instance=ExtResource( 5 )]
 
@@ -165,3 +163,4 @@ trigger = false
 _update_shape_index = 0
 
 
+[editable path="Prog"]
