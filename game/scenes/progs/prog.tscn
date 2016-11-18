@@ -9,8 +9,7 @@
 [node name="Prog" type="RigidBody"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
-input/ray_pickable = true
+input/ray_pickable = false
 input/capture_on_drag = false
 shape_count = 1
 shapes/0/shape = ExtResource( 1 )
@@ -42,7 +41,7 @@ __meta__ = { "__editor_plugin_screen__":"3D" }
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 0.707109, -0.405578, 0.579227, -4.41074e-06, 0.819151, 0.573578, -0.707105, -0.405585, 0.579227, 10, 10, 10 )
 projection = 1
-size = 1.0
+size = 8.0
 near = 0.0
 far = 100.0
 keep_aspect = 1
