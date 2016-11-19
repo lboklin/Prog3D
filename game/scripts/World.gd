@@ -7,7 +7,7 @@ var current_cam = 0
 
 func spawn_indicator(pos):
 
-	var indicator = preload("res://scenes/click_indicator.tscn").instance()
+	var indicator = preload("res://scenes/ClickIndicator.tscn").instance()
 	self.add_child(indicator)
 	indicator.set_indicator_pos(pos)
 

@@ -35,7 +35,8 @@ func get_jump_initial_velocity(dest):
 #	var vertical_distance = jump_vector_3D.y
 	## get direction to dest in 2D along the ground
 	var dir = Vector2(jump_vector_3D.x, jump_vector_3D.z).normalized()
-	print(dir.y)
+#	print(dir.y)
+#	print("Hello")
 
 	# Now calculate velocity
 	var horizontal_velocity = horizontal_distance / t

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://scenes/click_indicator.gd" type="Script" id=1]
-[ext_resource path="res://scenes/l-click_indicator.tex" type="Texture" id=2]
+[ext_resource path="res://scripts/ClickIndicator.gd" type="Script" id=1]
+[ext_resource path="res://scenes/left-click_indicator.tex" type="Texture" id=2]
 
 [sub_resource type="FixedMaterial" id=1]
 

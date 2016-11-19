@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/progs/prog_shape.tres" type="Shape" id=1]
-[ext_resource path="res://scenes/progs/prog.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Prog.gd" type="Script" id=2]
 [ext_resource path="res://scenes/progs/prog.msh" type="Mesh" id=3]
-[ext_resource path="res://scenes/progs/prog_top-fixmat.tres" type="Material" id=4]
-[ext_resource path="res://scenes/progs/prog_bottom-fixmat.tres" type="Material" id=5]
+[ext_resource path="res://scenes/progs/prog_fixmat_top.tres" type="Material" id=4]
+[ext_resource path="res://scenes/progs/prog_fixmat_bottom.tres" type="Material" id=5]
 
 [node name="Prog" type="RigidBody"]
 
